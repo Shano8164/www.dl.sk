@@ -1,0 +1,324 @@
+#od-order-verification-popup,
+#od-block-info-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 20px;
+}
+#od-order-verification-popup .otp-verification-inner {
+    background: #f2f2f2;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+#od-order-verification-popup .otp-verification-header {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #868686;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#od-order-verification-popup .otp-verification-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #000;
+    font-weight: 400;
+}
+#od-order-verification-popup .modal__close {
+    background: url("close-icon.png") center center/cover no-repeat;
+}
+#od-order-verification-popup .otp-verification-body {
+    padding: 10px 0;
+}
+#od-order-verification-popup .otp-verification-form {
+    display: flex;
+    flex-direction: column;
+}
+#od-order-verification-popup .otp-form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+#od-order-verification-popup .otp-form-group input {
+    width: 100%;
+    padding: 10px !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    border: 1px solid #868686 !important;
+    font-size: 17px;
+}
+#od-order-verification-popup .otp-form-group-25 {
+    margin-bottom: 25px;
+}
+#od-order-verification-popup .otp-form-group:last-child {
+    margin-bottom: 0;
+}
+
+#od-order-verification-popup #otp-verify-btn {
+	border-radius: 5px;
+	width: 100%;
+	max-width: 160px;
+	padding: 10px;
+	background: #0096c8;
+	border-color: #0096c8;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1em;
+	box-sizing: border-box;
+	transition: background-color 0.3s, transform 0.3s;
+		
+}
+
+#od-order-verification-popup #otp-verify-btn:hover {
+    background: #29b3e1;
+    color: #fff;
+}
+#od-order-verification-popup #otp-resend-btn {
+	border-radius: 5px;
+    color: #fff;
+    background-color: #f67a3c;
+    border-color: #f67a3c;.
+	
+}
+#od-order-verification-popup #otp-resend-btn:hover {
+    background-color: #f48f5c;
+    border-color: #f48f5c;
+}
+#od-order-verification-popup .otp-verification-footer {
+    padding-top: 10px;
+    border-top: 1px solid #eaeaea;
+    text-align: right;
+}
+#od-order-verification-popup .otp-status-error,
+#od-order-verification-popup .otp-status-success {
+    padding: 8px;
+    border-radius: 6px;
+    display: none;
+}
+@media (max-width: 480px) {
+    #od-order-verification-popup .otp-verification-inner {
+        width: 95%;
+    }
+}
+#od-order-verification-popup .modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+#od-order-verification-popup .modal__close:after,
+#od-order-verification-popup .modal__close:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+#od-order-verification-popup .modal__close:hover:after,
+#od-order-verification-popup .modal__close:hover:before {
+    background: #aaa;
+}
+#od-order-verification-popup .modal__close:before {
+    transform: rotate(-45deg);
+}
+#od-order-verification-popup .license-expired-notice {
+    color: red;
+}
+#od-order-verification-popup .order-detect-loader {
+    width: fit-content;
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 14px;
+    clip-path: inset(0 100% 0 0);
+    animation: 1s steps(11) infinite l5;
+}
+#od-order-verification-popup .order-detect-loader:before {
+    content: "Please wait...";
+}
+@keyframes l5 {
+    to {
+        clip-path: inset(0 -1ch 0 0);
+    }
+}
+#od-order-verification-popup .order-detect-hidden-text {
+    color: transparent;
+    font-size: 0;
+}
+#od-order-verification-popup .otp-resend-msg,
+#od-order-verification-popup .otp-sedning-msg {
+    font-size: 18px;
+    text-align: center;
+}
+#od-order-verification-popup .order-detect-hidden-text::before {
+    content: "•••••••••••••••••••••••••";
+    font-size: 20px;
+    color: #40d469;
+}
+#od-order-verification-popup .otp-status-error {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    color: #842029;
+}
+#od-order-verification-popup .otp-status-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
+#od-order-verification-popup .order-detect-show {
+    display: block !important;
+}
+#od-order-verification-popup .order-detect-hide {
+    display: none !important;
+}
+#od-order-verification-popup .otp-sedning-msg {
+    background-color: #0096c8;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+#od-order-verification-popup .otp-resend-msg {
+    color: #000;
+}
+#od-order-verification-popup .otp-form-area {
+    display: none;
+}
+#od-order-verification-popup .otp-process-loader {
+    display: none;
+    margin: 20px auto;
+    border: 4px solid #f67a3c;
+    border-radius: 50%;
+    border-top: 4px solid #0096c7;
+    width: 30px;
+    height: 30px;
+    animation: 1s linear infinite spin;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#od-order-verification-popup #od-block-info-popup {
+    display: none;
+}
+
+/* Inner popup container */
+.od-block-info-popup-inner {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  /* Header section */
+  .od-block-info-popup-header {
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  
+  /* Title styling */
+  .od-block-info-popup-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Close button */
+  .od-block-info-popup-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #999;
+  }
+  
+  .od-block-info-popup-close::before {
+    content: "×";
+  }
+  
+  /* Body section */
+  .od-block-info-popup-body {
+    padding: 20px 15px;
+  }
+  
+  /* Text content */
+  .od-block-info-popup-body p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* Contact section */
+  .od-block-info-contact {
+    margin-top: 20px;
+  }
+  
+  /* Phone number */
+  .od-block-info-phone {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Social buttons container */
+  .od-block-info-social {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Common styling for social buttons */
+  .od-block-info-social a {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* WhatsApp button */
+  .od-block-info-whatsapp {
+    background-color: #25D366;
+  }
+  
+  /* Messenger button */
+  .od-block-info-messenger {
+    background-color: #0084FF;
+  }
